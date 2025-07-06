@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import io from "socket.io-client";
 import "./App.css";
 
-const socket = io("http://localhost:8000");
+const socket = io("https://ytdl-backend-production-2e81.up.railway.app");
 
 function App() {
   const [url, setUrl] = useState("");
@@ -17,7 +17,7 @@ function App() {
   const [loadingFormats, setLoadingFormats] = useState(false);
   const [statusText, setStatusText] = useState("");
 
-  const BASE_URL = "http://localhost:8000";
+  const BASE_URL = "https://ytdl-backend-production-2e81.up.railway.app";
 
   const convertToRealUnits = (str) => {
     const match = str?.match(/([\d.]+)\s*(KiB|MiB|GiB|B)/);
