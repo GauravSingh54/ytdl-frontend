@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  color: #ffffff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+
+/* Main container */
+.App {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 30px;
+  width: 95%;
+  max-width: 600px; /* Increased from 500px */
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeIn 0.5s ease;
+  box-sizing: border-box;
+}
+
+
+/* Headings */
+.App h1 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #00e5ff;
+}
+
+/* Inputs and select */
+input.input,
+select.input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+input.input:focus,
+select.input:focus {
+  border: 1px solid #00e5ff;
+}
+
+/* Buttons */
+button.btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  margin: 10px 5px 10px 0;
+  transition: all 0.3s ease;
+  display: inline-block;
+  min-width: 180px;
+}
+
+.btn.primary {
+  background: #00e5ff;
+  color: #000;
+}
+
+.btn.secondary {
+  background: #00c853;
+  color: #000;
+}
+
+.btn.success {
+  background: #7c4dff;
+  text-decoration: none;
+  color: white;
+  display: block;
+  text-align: center;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px #00e5ff;
+}
+
+/* Dropdown */
+.dropdown {
+  margin-top: 15px;
+}
+
+/* Progress */
+.progress-section {
+  margin-top: 20px;
+}
+
+progress {
+  width: 100%;
+  height: 20px;
+  appearance: none;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #333;
+  border-radius: 20px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #00e5ff;
+}
+
+.status-text {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Loader (if used) */
+.loader {
+  width: 18px;
+  height: 18px;
+  border: 3px solid #00e5ff;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Animations */
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Layout */
+@media (max-width: 600px) {
+  .App {
+    padding: 20px;
+    width: 95%;
+  }
+
+  button.btn {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .btn.primary,
+  .btn.secondary,
+  .btn.success {
+    min-width: unset;
+  }
+}
